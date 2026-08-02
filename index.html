@@ -563,7 +563,7 @@
         <div class="container">
           <h2 class="section-heading">Choose the School That Fits You Best</h2>
 
-          <ul class="cards__grid">
+          <ul class="cards__grid" id="schoolCardsGrid">
             <!-- Card 1 -->
             <li class="cards__item">
               <img
@@ -634,6 +634,46 @@
               </div>
             </li>
           </ul>
+
+          <!-- Pagination dots — visible only on mobile slider view (<480px) -->
+          <div
+            class="cards__dots"
+            role="tablist"
+            aria-label="School category slides"
+          >
+            <button
+              type="button"
+              class="cards__dot"
+              role="tab"
+              data-index="0"
+              aria-selected="true"
+              aria-label="Show slide 1 of 4"
+            ></button>
+            <button
+              type="button"
+              class="cards__dot"
+              role="tab"
+              data-index="1"
+              aria-selected="false"
+              aria-label="Show slide 2 of 4"
+            ></button>
+            <button
+              type="button"
+              class="cards__dot"
+              role="tab"
+              data-index="2"
+              aria-selected="false"
+              aria-label="Show slide 3 of 4"
+            ></button>
+            <button
+              type="button"
+              class="cards__dot"
+              role="tab"
+              data-index="3"
+              aria-selected="false"
+              aria-label="Show slide 4 of 4"
+            ></button>
+          </div>
         </div>
       </section>
 
@@ -687,7 +727,7 @@
               class="exhibit__track"
               id="exhibitTrack"
               aria-label="Exhibition highlights, scrollable"
-              tabindex="0" 
+              tabindex="0"
             >
               <li class="exhibit__card">
                 <img
@@ -898,6 +938,7 @@
       </div>
     </footer>
 
+    <script src="./js/school-cards.js"></script>
     <script src="./js/exhibition.js"></script>
   </body>
 </html>
