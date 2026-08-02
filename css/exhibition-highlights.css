@@ -1,0 +1,158 @@
+.exhibit {
+  position: relative;
+  background: linear-gradient(360deg, #000e38 0%, #3f186a 100%);
+  padding: var(--space-xl) 0 calc(var(--space-xl));
+  overflow: hidden;
+}
+
+.exhibit__heading {
+  text-align: center;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 3.5vw, 35px);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: var(--space-lg);
+}
+
+/* Viewport clips the track; track itself overflows to create the peek effect */
+.exhibit__viewport {
+  overflow: hidden;
+}
+
+.exhibit__track {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-xs);
+}
+
+.exhibit__track::-webkit-scrollbar {
+  height: 4px;
+}
+.exhibit__track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+
+
+/* MOBILE BASE: fixed size, next card peeks in on the right */
+.exhibit__card {
+  flex: 0 0 220px;
+  height: 260px;
+  scroll-snap-align: start;
+  border-radius: 20px;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  /* Cross-browser gradient border that respects border-radius everywhere */
+  background:
+    linear-gradient(59.05deg, #ddbfff 0.39%, #edddff 93.5%) padding-box,
+    linear-gradient(315.27deg, #755797 2.63%, #070f3d 93.79%) border-box;
+  border: 2px solid transparent;
+}
+
+.exhibit__icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.exhibit__title {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  background: linear-gradient(360deg, #000e38 0%, #3f186a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exhibit__text {
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  background: linear-gradient(360deg, #000e38 0%, #3f186a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}
+
+.exhibit__controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  z-index: 1;
+}
+
+.exhibit__arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  background: transparent;
+  color: var(--color-white);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.exhibit__arrow:hover,
+.exhibit__arrow:focus-visible {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-purple-dark);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.exhibit__curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: block;
+  pointer-events: none;
+}
+
+/* ---- 480px+: slightly bigger fixed size ---- */
+@media (min-width: 480px) {
+  .exhibit__card {
+    flex: 0 0 240px;
+    height: 260px;
+  }
+}
+
+/* ---- 768px+ ---- */
+@media (min-width: 768px) {
+  .exhibit__card {
+    flex: 0 0 260px;
+    height: 280px;
+  }
+}
+
+/* ---- 1024px+ ---- */
+@media (min-width: 1024px) {
+  .exhibit__card {
+    flex: 0 0 280px;
+    height: 300px;
+  }
+}

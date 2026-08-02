@@ -1,0 +1,70 @@
+.logos__row {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logos__row + .logos__row {
+  margin-top: var(--space-lg);
+}
+
+.logos__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+  width: max-content;
+}
+
+.logos__item {
+  flex: 0 0 auto;
+}
+
+/* MOBILE BASE: smaller box so 2-3 fit on a small screen at once */
+.logos__box {
+  width: 250px;
+  height: 120px;
+  border: 1px solid #e8e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logos__box img {
+  width: 120px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Row 1: scrolls left */
+.logos__row--ltr .logos__track {
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Row 2: scrolls right */
+.logos__row--rtl .logos__track {
+  animation: scroll-right 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pause on hover OR keyboard focus */
+.logos__row:hover .logos__track,
+.logos__row:focus-within .logos__track {
+  animation-play-state: paused;
+}

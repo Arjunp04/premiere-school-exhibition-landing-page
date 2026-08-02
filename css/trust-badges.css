@@ -1,0 +1,136 @@
+
+.trust-badges__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.trust-badges__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.trust-badges__leaf {
+  width: 60px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.trust-badges__leaf--right {
+  transform: scaleX(-1);
+}
+
+.trust-badges__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-alt);
+  padding: 0 var(--space-xs);
+}
+
+.trust-badges__stat,
+.trust-badges__caption {
+  background: linear-gradient(90deg, #010e39 0%, #0344a2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  white-space: nowrap;
+}
+
+/* UNIVERSAL ONE-TIME CLAMP DEFINITIONS */
+.trust-badges__stat {
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 27px); 
+}
+
+.trust-badges__caption {
+  font-weight: 400;
+  font-size: clamp(18px, 2vw, 27px); 
+}
+
+/* ---------------- SM: SMALL TABLETS / LARGE PHONES (480px to 767px) ---------------- */
+@media (min-width: 480px) {
+
+  .trust-badges__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .trust-badges__list {
+    row-gap: 40px; 
+  }
+
+  .trust-badges__leaf {
+    width: 50px;
+  }
+
+  .trust-badges__stat {
+    font-size: 18px; 
+  }
+  
+  .trust-badges__caption {
+    font-size:18px; 
+  }
+}
+
+/* ---------------- MD: TABLETS (768px to 1023px) ---------------- */
+@media (min-width: 768px) {
+  
+  .trust-badges__list {
+    row-gap: 50px; 
+  }
+
+  .trust-badges__leaf {
+    width: 80px;
+  }
+
+  .trust-badges__stat {
+    font-size: 24px; 
+  }
+  
+  .trust-badges__caption {
+    font-size: 24px; 
+  }
+  
+}
+
+/* ---------------- LG: DESKTOP ROW (1024px to 1439px) ---------------- */
+@media (min-width: 1024px) {
+
+  .trust-badges__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .trust-badges__item {
+    flex: 1 1 200px;
+  }
+
+  .trust-badges__leaf {
+    width: clamp(50px, 5vw, 80px);
+    height: auto;
+  }
+  .trust-badges__stat {
+    font-size: clamp(20px, 2.3vw, 27px); 
+
+  }
+  
+  .trust-badges__caption {
+    font-size: clamp(20px, 1.8vw, 22px); 
+  }
+}
+
+/* ---------------- XL: LARGE DESKTOP (1440px and up) ---------------- */
+@media (min-width: 1440px) {
+
+
+}
